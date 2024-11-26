@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: "0000"
+  liquibase:
+    change-log: classpath:migrations/changelog.xml
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+scheduler:
+  increase-by-percent: 10
+  up-to-increase-percentage: 207
+  push-delay-ms: 30000
